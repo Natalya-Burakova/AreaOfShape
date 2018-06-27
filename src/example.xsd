@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="figures" type="figuresType"/>
+    <xs:complexType name="rectangleType">
+        <xs:sequence>
+            <xs:element name="side" maxOccurs="2" minOccurs="2" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="circleType">
+        <xs:sequence>
+            <xs:element type="xs:int" name="radius"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="figuresType">
+        <xs:sequence>
+            <xs:element type="squareType" name="square" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element type="rectangleType" name="rectangle" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element type="triangleType" name="triangle" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element type="circleType" name="circle" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="triangleType">
+        <xs:sequence>
+            <xs:element name="side" maxOccurs="3" minOccurs="3" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="squareType">
+        <xs:sequence>
+            <xs:element type="xs:int" name="side"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
